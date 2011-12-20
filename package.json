@@ -1,0 +1,14 @@
+{
+	"name": "pull",
+	"version": "1.0.0",
+	"description": "little tool to pull repos from git built on top of gits. It was built to provide an API similiar to arca",
+	"keywords": ["git", "pull"],
+	"author": "Sergio Ramos <mail@sergioramos.me>",
+	"dependencies": {
+		"gits": "0.0.1"
+	},
+	"main": "pull",
+	"engines": {
+		"node": ">=0.4.12"
+	}
+}
