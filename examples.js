@@ -1,9 +1,5 @@
-pull = require('./pull');
+var pull = require('./pull'),
+		file = require('file');
 
-pull.set('git@github.com:ramitos/blog.git');
-
-pull.sync(function (e, path) {
-	if(!e) {
-		console.log('files downloaded to ' + path);
-	}
-});
+pull = require('pull').set('git@github.com:ramitos/blog.git', file.path.join(__dirname, 'articles'));	
+pull.sync();
