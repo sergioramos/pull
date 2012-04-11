@@ -1,10 +1,15 @@
 {
 	"name": "pull",
-	"version": "2.0.4",
+	"version": "2.0.5",
 	"description": "Little tool to pull repos from GIT. It was built to provide an API similiar to arca",
 	"keywords": ["git", "pull", "sync"],
 	"author": "Sergio Ramos <mail@sergioramos.me>",
 	"main": "pull",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/ramitos/pull.git"
+	},
+	"license": "MIT",
 	"engines": {
 		"node": ">=0.4.12"
 	}
