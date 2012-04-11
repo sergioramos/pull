@@ -30,6 +30,8 @@ git.prototype.folderExists = function (folder, callback) {
 }
 
 git.prototype.isRepo = function (callback) {
+	var self = this
+	
 	this.folderExists(path.join(this.folder, '.git'), function (exists) {
 		if(exists) return fs.readFile(path.join(self.folder, '.git/config'), 'utf-8', function (e, data) {
 			if(e) throw e

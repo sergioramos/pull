@@ -1,6 +1,6 @@
 {
 	"name": "pull",
-	"version": "2.1.0",
+	"version": "2.1.1",
 	"description": "Little tool to pull repos from GIT. It was built to provide an API similiar to arca",
 	"keywords": ["git", "pull", "sync"],
 	"author": "Sergio Ramos <mail@sergioramos.me>",
