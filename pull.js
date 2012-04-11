@@ -11,7 +11,7 @@ git.prototype.set = function (repo, folder) {
 	
 	this.folderExists(this.folder, function (exists) {
 		if(exists) return self.isRepo(function (repo) {
-			if(repo & (repo.url !== self.repo)) throw new Error(self.folder + ' is already a repo')
+			if(repo && (repo.url !== self.repo)) throw new Error(self.folder + ' is already a repo')
 		})
 		
 		fs.mkdir(self.folder)	
