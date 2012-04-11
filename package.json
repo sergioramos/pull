@@ -1,11 +1,11 @@
 {
 	"name": "pull",
-	"version": "2.0.1",
-	"description": "little tool to pull repos from git. It was built to provide an API similiar to arca",
-	"keywords": ["git", "pull"],
+	"version": "2.0.2",
+	"description": "Little tool to pull repos from GIT. It was built to provide an API similiar to arca",
+	"keywords": ["git", "pull", "sync"],
 	"author": "Sergio Ramos <mail@sergioramos.me>",
 	"dependencies": {
-		"file": "0.1.1"
+		"file": "0.2.x"
 	},
 	"main": "pull",
 	"engines": {

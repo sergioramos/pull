@@ -1,5 +1,5 @@
 # pull
-Little tool to pull repos from git. It was built to provide an API similiar to arca
+Little tool to pull repos from git. It was built to provide an API similiar to [arca]()
 
 ## installation
 	npm install pull
