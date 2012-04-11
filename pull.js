@@ -22,7 +22,7 @@ git.prototype.set = function (repo, folder) {
 
 git.prototype.folderExists = function (folder, callback) {
 	fs.stat(folder, function (e, stat) {
-		if(e & (e.code === 'ENOENT')) return callback(false)
+		if(e && (e.code === 'ENOENT')) return callback(false)
 		if(e) throw e
 		if(stat.isDirectory()) return callback(true)
 		callback(false)
