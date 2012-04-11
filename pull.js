@@ -1,5 +1,5 @@
 var exec  = require('child_process').exec,
-		file = require('file'),
+		path = require('path'),
 		fs = require('fs');
 
 var git = function() {}
@@ -30,8 +30,8 @@ git.prototype.folderExists = function (folder, callback) {
 }
 
 git.prototype.isRepo = function (callback) {
-	this.folderExists(file.path.join(this.folder, '.git'), function (exists) {
-		if(exists) return fs.readFile(file.path.join(self.folder, '.git/config'), 'utf-8', function (e, data) {
+	this.folderExists(path.join(this.folder, '.git'), function (exists) {
+		if(exists) return fs.readFile(path.join(self.folder, '.git/config'), 'utf-8', function (e, data) {
 			if(e) throw e
 			callback({
 				remote: data.match(/\[remote \"(.*)\"\]/)[1],
