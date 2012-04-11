@@ -4,7 +4,7 @@ var exec  = require('child_process').exec,
 
 var git = function() {}
 
-git.prototype.set = function (repo, folder) {
+git.prototype.set = function (repo, folder, callback) {
 	this.repo = repo
 	this.folder = folder
 	var self = this
@@ -12,9 +12,10 @@ git.prototype.set = function (repo, folder) {
 	this.folderExists(this.folder, function (exists) {
 		if(exists) return self.isRepo(function (repo) {
 			if(repo && (repo.url !== self.repo)) throw new Error(self.folder + ' is already a repo')
+			callback()
 		})
 		
-		fs.mkdir(self.folder)	
+		fs.mkdir(self.folder, callback)
 	})
 
 	return this
@@ -22,9 +23,8 @@ git.prototype.set = function (repo, folder) {
 
 git.prototype.folderExists = function (folder, callback) {
 	fs.stat(folder, function (e, stat) {
-		if(e && (e.code === 'ENOENT')) return callback(false)
-		if(e) throw e
-		if(stat.isDirectory()) return callback(true)
+		if(e && (e.code !== 'ENOENT')) throw e
+		if(stat && (stat.isDirectory())) return callback(true)
 		callback(false)
 	})
 }
@@ -54,8 +54,8 @@ git.prototype.isEmpty = function (callback) {
 git.prototype.sync = function () {
 	var self = this
 	this.isRepo(function (repo) {
-		if(!repo) return exec('git clone ' + self.repo + ' ' + self.folder)
-		exec('cd ' + self.folder + '; git pull')
+		if(!repo) exec('git clone ' + self.repo + ' ' + self.folder)
+		else exec('cd ' + self.folder + '; git pull')
 	})
 }
 
