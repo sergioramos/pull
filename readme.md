@@ -1,3 +1,5 @@
+![deprecated](https://img.shields.io/badge/status-deprecated-red.svg?style=plastic)
+
 # pull
 Little tool to pull repos from git. It was built to provide an API similiar to [arca]()
 
